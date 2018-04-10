@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import Footer from './footer';
+import LogoHeader from './logo-header';
 
 class Details extends Component{
     constructor(props){
@@ -84,15 +86,19 @@ class Details extends Component{
     render(){
 
         const {name, image, ingredients, instructions, hide, index, complete} = this.props;
-        console.log(this.props);
+        
+        const instrMap = instructions.map((item, index) => {
+            return <li className='collection-item' key={index}>{index+1}. {item.step}</li>
+        })
+
+        const ingrMap = ingredients.map((item, index) => {
+            console.log(item);
+            return <li className='collection-item' key={index}>{`${item.amount} ${item.unit_type} ${item.ingredient}`}</li>
+        })
 
         return(
             <div className="detailsContainer">
-                <header className="detailsHeader">
-                    <div className="detailsBack" onClick={hide}><i className="fas fa-arrow-left iconcolor"></i></div>
-                    <div className="detailsLogo lobsterFont">Ding</div>
-                    <div className="detailsAdd"></div>
-                </header>
+                <LogoHeader onClick={hide} back={true} add={true} />
                 <main className="detailsMainArea">
                     <img src={image} alt="" className="detailsImg" />
                     <h3 className='detailsName'>{name}</h3>
@@ -101,27 +107,23 @@ class Details extends Component{
                     <div className={"detailsInstructionsHead " + this.state.instrTarget} onClick={()=>this.headerClicked('instr')} >Instructions</div>
                     <div className={"detailsNutritionHead " + this.state.nutrTarget} onClick={()=>this.headerClicked('nutr')} >Nutrition</div>
                     <div className="detailsIngredientsList" style={this.state.ingrList}>
-                        <ul>
-                            <li>{ingredients}</li>
+                        <ul className='collection'>
+                            {ingrMap}
                         </ul>
                     </div>
                     <div className="detailsInstructionsList" style={this.state.instrList}>
-                        <ul>
-                            <li>{instructions}</li>
+                        <ul className='collection'>
+                            {instrMap}
                         </ul>
-                        <button className="btn green darken-1" onClick={()=>complete(index)}>Complete</button>
+                        <button className="btn green darken-2" onClick={()=>complete(index)}>Complete</button>
                     </div>
                     <div className="detailsNutritionList" style={this.state.nutrList}>
-                        <ul>
-                            <li>WIP please don't sue</li>
+                        <ul className='collection'>
+                            <li className='collection-item'>WIP please don't sue</li>
                         </ul>
                     </div>
                 </main>
-                <footer className="detailsFooter">
-                    <div className="detailsMydetails" onClick={hide}><i className="far fa-list-alt"></i></div>
-                    <div className="detailsGroceries"><Link to='/grocery'><i className="fas fa-shopping-cart"></i></Link></div>
-                    <div className="detailsSettings"><Link to='/settings'><i className="fas fa-cogs"></i></Link></div>
-                </footer>
+                <Footer />
             </div>
         )
     }

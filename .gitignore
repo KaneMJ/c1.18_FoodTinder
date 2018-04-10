@@ -1,4 +1,10 @@
+
+/endpoints/mysql_connect.php
+
 .idea
 .DS_Store
 node_modules
 .vscode
+
+mysqli_conn.php
+

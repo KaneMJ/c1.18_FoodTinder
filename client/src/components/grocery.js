@@ -11,7 +11,7 @@ class Grocery extends Component{
     render(){
         return (
             <div className="groceryContainer Oxygen">
-            <header className="groceryHeader">
+            <header className="groceryHeader" style={{paddingRight: `26px`}}>
                     <div className="groceryBack"><Link to='/mymeals'><i className="fas fa-arrow-left iconcolor"></i></Link></div>
                     <div className="groceryLogo lobsterFont">Ding</div>
                     <div className="groceryAdd"></div>

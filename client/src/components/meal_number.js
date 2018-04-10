@@ -6,6 +6,7 @@ import '../assets/css/mealNumber.css';
 import {Link} from 'react-router-dom';
 import mealdb from './meal-db';
 import mealschosen from './meals-chosen';
+import LogoHeader from './logo-header';
 
 class MealNumber extends Component {
 
@@ -22,17 +23,20 @@ class MealNumber extends Component {
 
     render() {
         return (
-            <div className="container">
-                <Header title={'Amount Of Meals?'} />
-                <div className="button-column collection">
-                    <MealNumButton title={'1'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>  
-                    <MealNumButton title={'3'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>
-                    <MealNumButton title={'5'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
-                    <MealNumButton title={'7'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
-                </div>  
-                <div className="right bottom">
-                <Link to='/mymeals'><Next style={'bottom'}/></Link>                  
-                </div>  
+            <div>
+                <LogoHeader />
+                <div className="container">
+                    <Header title={'Amount Of Meals?'} />
+                    <div className="button-column collection">
+                        <MealNumButton title={'1'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>  
+                        <MealNumButton title={'3'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>
+                        <MealNumButton title={'5'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
+                        <MealNumButton title={'7'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
+                    </div>  
+                    <div className="right" style={{marginTop: `2.2vh`}}>
+                    <Link to='/mymeals'><Next style={'bottom'}/></Link>                  
+                    </div>  
+                </div>                
             </div>
         );
     };

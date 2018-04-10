@@ -13,61 +13,131 @@ export default [
     {
         imgSrc: beans,
         mealName: 'Beans',
-        mealIngr: 'a, a, a, a',
-        mealInstr: 'a a a a a a'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: burger,
         mealName: 'Hamburger',
-        mealIngr: 'b, b, b, b',
-        mealInstr: 'b b b b b'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: curry,
         mealName: 'Curry',
-        mealIngr: 'c, c, c, c',
-        mealInstr: 'c c c c c c'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: donuts,
         mealName: 'Donuts',
-        mealIngr: 'd, d, d, d',
-        mealInstr: 'd d d d d'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: fruit,
         mealName: 'Assortment of Fruit',
-        mealIngr: 'e, e, e, e',
-        mealInstr: 'e e e e e'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: mcdonalds,
         mealName: '5 Dollar McDonalds Platter',
-        mealIngr: 'f, f, f, f',
-        mealInstr: 'f f f f'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: pancake,
         mealName: 'Full Stack',
-        mealIngr: 'g, g, g, g',
-        mealInstr: 'g g g g g'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: pasta,
         mealName: 'Pasta',
-        mealIngr: 'g, g, g, g',
-        mealInstr: 'g g g g g'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: tacos,
         mealName: 'Tacos',
-        mealIngr: 'g, g, g, g',
-        mealInstr: 'g g g g g'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
     {
         imgSrc: tart,
         mealName: 'Fruit Tarts',
-        mealIngr: 'g, g, g, g',
-        mealInstr: 'g g g g g'
+        mealIngr: [
+                        {"ingredient":"cheese","amount":"2","unit_type":"cups","recipe_id":"123"},
+                        {"ingredient":"sauce","amount":"2","unit_type":"tbs","recipe_id":"123"}
+                    ],
+        mealInstr: [
+                        {"step_num":"1","step":"roll dough","recipe_id":"123"},
+                        {"step_num":"2","step":"cover with cheese","recipe_id":"123"},
+                        {"step_num":"3","step":"make pizza","recipe_id":"123"}
+                    ]
     },
 ]

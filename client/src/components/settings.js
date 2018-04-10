@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import LogoHeader from './logo-header';
+import Footer from './footer';
 
 class Settings extends Component{
     constructor(props){
@@ -7,15 +9,17 @@ class Settings extends Component{
 
     }
     render(){
-        return (
+        return (                      
             <div className='settingsContainer'>
-                <h2 className='settingsHeader'>Settings</h2>
-                <button className='settingsButton'><Link to='/diet-settings'>Reset Filters</Link></button>
+                <LogoHeader />
+                <h2 className='settingsHeader lobsterFont'>Settings</h2>
+                <button className='settingsButton oxygenFont'><Link to='/diet-settings'>Reset Filters</Link></button>
                 <br/>
-                <button className='settingsButton'><Link to='meal-num-settings'>Add Meals</Link></button>
+                <button className='settingsButton oxygenFont'><Link to='meal-num-settings'>Add Meals</Link></button>
                 <br/>
-                <button className='settingsButton'><Link to='/'>Logout</Link></button>
-            </div>
+                <button className='settingsButton oxygenFont'><Link to='/'>Logout</Link></button>
+                <Footer />  
+            </div>      
         )
     }
 }

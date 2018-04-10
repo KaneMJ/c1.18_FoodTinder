@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import registerstorage from './register-storage';
 import '../assets/css/reg-confirm.css'
 import {Link} from 'react-router-dom';
+import LogoHeader from './logo-header';
 
 class RegisterConfirm extends Component{
     constructor(props){
@@ -16,15 +18,15 @@ class RegisterConfirm extends Component{
                 <h3 className='center regConfirmHeader'>Confirm Choices</h3>
                 <div className='regConfirmSelectionArea center'>
                     <div className='regConfirmLabel'>Email Address</div>
-                    <div>Email here</div>
+                    <div>{registerstorage.email}</div>
                     <div className='regConfirmLabel'>Diet Selection</div>
-                    <div>Diet here</div>
+                    <div>{registerstorage.diet}</div>
                     <div className='regConfirmLabel'>Allergies</div>
-                    <div>Allergy here</div>
+                    <div>{registerstorage.allergy.join(', ') || 'None'}</div>
                 </div>
                 <div className='regConfirmButtonContainer'>
-                    <Link to='/'><button className='btn red darken-3'>Back to start</button></Link>
-                    <Link to='/'><button className='btn green darken-1'>All set!</button></Link>
+                    <Link to='/' className='btn red darken-2'>Back to start</Link>
+                    <Link to='/meal-number' className='btn blue darken-2'>All set!</Link>
                 </div>
                 <div className='page-footer bottom blue darken-2 z-depth-1 regConfirmFooter'>
                 </div>

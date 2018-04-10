@@ -12,7 +12,7 @@ class Button extends Component {
     componentWillReceiveProps(nextProps, prevState) {
         if (nextProps.determineSelected) {
             this.setState({
-                color: '#26a69a',
+                color: 'rgb(6, 101, 156)',
             });
         } else {
             this.setState({
@@ -22,10 +22,9 @@ class Button extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
-                <a onClick={this.props.selectedCheck.bind(null, this)} style={{backgroundColor: this.state.color}} className={`btn-desk waves-effect waves-light btn ${this.props.style}`}>
+                <a onClick={this.props.selectedCheck.bind(null, this)} style={{backgroundColor: this.state.color}} className={`btn-desk waves-effect waves-light btn z-depth-2 ${this.props.style}`}>
                 <div>
                     <div className="title-container oxygenFont">
                        {this.props.title} 

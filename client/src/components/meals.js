@@ -4,6 +4,8 @@ import Details from './details';
 import mealdb from './meal-db';
 import mealschosen from './meals-chosen';
 import MealCreator from './meal-creator';
+import LogoHeader from './logo-header';
+import Footer from './footer';
 
 class Meals extends Component{
     constructor(props){
@@ -74,9 +76,6 @@ class Meals extends Component{
         mealschosen.push(mealdb[randomIndex]);
         mealdb.splice(randomIndex, 1);
     }
-    static contextTypes = {
-        router: () => true
-    }
     render(){
 
         const mealMap = this.state.meals.map((meal, index) => {
@@ -87,20 +86,12 @@ class Meals extends Component{
 
         return(
             <div className="mealsContainer">
-                <header className="mealsHeader">
-                    <div className="mealsBack" onClick={this.context.router.history.goBack}><i className="fas fa-arrow-left iconcolor"></i></div>
-                    <div className="mealsLogo lobsterFont">Ding</div>
-                    <div className="mealsAdd"><Link to='/meal-number'><i className="far fa-plus-square"></i></Link></div>
-                </header>
+            <LogoHeader back={true} add={true}/>
                 <main className="mealsMainArea">
                     {mealMap}
                     {this.state.showDetails && <Details name={name} image={image} ingredients={ingredients} instructions={instructions} hide={this.hideDetails.bind(this)} complete={this.completeMeal.bind(this)} index={this.state.mealDetail.index} />}
                 </main>
-                <footer className="mealsFooter">
-                    <div className="mealsMyMeals"><Link to='/mymeals'><i className="far fa-list-alt"></i></Link></div>
-                    <div className="mealsGroceries"><Link to='/grocery'><i className="fas fa-shopping-cart"></i></Link></div>
-                    <div className="mealsSettings"><Link to='/settings'><i className="fas fa-cogs"></i></Link></div>
-                </footer>
+            <Footer />
             </div>
         )
     }

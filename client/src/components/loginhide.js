@@ -27,38 +27,40 @@ class LoginHide extends Component{
         }
     }
     emailChange(e){
-        const emailValidification = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{1,}))$/;
+        const emailValidification = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         this.setState({
             emailValue: e.target.value
+        }, () => {
+            if(emailValidification.test(this.state.emailValue)){
+                const greenText = {color: 'green'};
+                this.setState({
+                    emailColor: greenText
+                });
+            } else {
+                const blackText = {color: 'black'};
+                this.setState({
+                    emailColor: blackText
+                });
+            }
         });
-        if(emailValidification.test(this.state.emailValue)){
-            const greenText = {color: 'green'};
-            this.setState({
-                emailColor: greenText
-            });
-        } else {
-            const blackText = {color: 'black'};
-            this.setState({
-                emailColor: blackText
-            });
-        }
     }
     passwordChange(e){
         this.setState({
             passwordValue: e.target.value
-        })
-        if(this.state.passwordValue.length >= 7){
-            const greenText = {color: 'green'};
-            this.setState({
-                passwordColor: greenText
-            });
-        } else {
-            const blackText = {color: 'black'};
-            this.setState({
-                passwordColor: blackText
-            });
-        }
+        }, () => {
+            if(this.state.passwordValue.length >= 8){
+                const greenText = {color: 'green'};
+                this.setState({
+                    passwordColor: greenText
+                });
+            } else {
+                const blackText = {color: 'black'};
+                this.setState({
+                    passwordColor: blackText
+                });
+            }
+        });
     }
     goBack(e){
         e.preventDefault();
@@ -106,7 +108,7 @@ class LoginHide extends Component{
                     <input type='password' value={this.state.passwordValue} onChange={this.passwordChange} onFocus={this.passwordFocused} onBlur={this.passwordBlurred}/>
                     {this.state.passwordFocused && <div style={this.state.passwordColor} className='validationText'>{this.state.passwordColor.color === 'green' && <div className='checkmark'>✓</div>}Must be at least 8 characters long</div>}
                 </div>
-        <button>{(this.state.dataValue) ? <Link to='/mymeals'>Submit</Link> : <Link to='/meal-num-settings'>Submit</Link>}</button>
+        <button>{(this.state.dataValue) ? <Link to='/mymeals'>Submit</Link> : <Link to='/meal-number'>Submit</Link>}</button>
             </form>
         );
     }

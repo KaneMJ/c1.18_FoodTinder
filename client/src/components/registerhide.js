@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import registerstorage from './register-storage';
 
 class RegisterHide extends Component{
@@ -13,25 +13,40 @@ class RegisterHide extends Component{
         this.state = {
             emailValue: '',
             passwordValue: '',
-            confirmValue: ''
+            confirmValue: '',
+            pageLink: false
         }
     }
     goBack(e){
         const stateCopy = {...this.state};
-        console.log(stateCopy);
+        const {emailValue, passwordValue, confirmValue} = this.state;
+        const emailValidification = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         registerstorage.email = stateCopy.emailValue;
         registerstorage.password = stateCopy.passwordValue;
-        console.log(registerstorage);
         e.preventDefault();
-        if(this.state.emailValue.length === 0 || this.state.passwordValue.length === 0 || this.state.confirmValue.length === 0){
-            alert('put stuff in the dang fields');
-            return;
-        } else if (this.state.passwordValue.length !== this.state.confirmValue.length){
-            alert('match yer daggum passwords')
-            return;
+
+        if(passwordValue.length < 8 || passwordValue.length > 32){
+            alert('Please input a password between 8 and 32 characters long');
+        } else if (passwordValue !== confirmValue){
+            alert('Please make sure your passwords fully match');
+        } else if (!emailValidification.test(emailValue)){
+            alert('Please enter a valid email address');
         } else {
-            this.props.returnFX();
+            this.setState({
+                pageLink: true
+            });
         }
+        // if(this.state.emailValue.length === 0 || this.state.passwordValue.length === 0 || this.state.confirmValue.length === 0){
+        //     alert('put stuff in the dang fields');
+        //     return;
+        // } else if (this.state.passwordValue.length !== this.state.confirmValue.length){
+        //     alert('match yer daggum passwords')
+        //     return;
+        // } else {
+        //     this.setState({
+        //         pageLink: true
+        //     })
+        // }
     }
     emailChange(e){
         this.setState({
@@ -63,7 +78,7 @@ class RegisterHide extends Component{
                     <label>Confirm Password</label>
                     <input type='password' value={this.state.confirmValue} onChange={this.confirmChange}/>
                 </div>
-                <button onClick={this.goBack}><Link to='/diet-selection'>Submit</Link></button>
+                {!this.state.pageLink ? <Link to={''} onClick={this.goBack} className='btn red darken-3'>Submit</Link> : <Redirect push to={'/diet-selection'} onClick={this.goBack} className='btn green darken-2'>Submit</Redirect>}
             </form>
         );
     }
