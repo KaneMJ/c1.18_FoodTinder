@@ -7,6 +7,38 @@ header("Access-Control-Allow-Credentials: true ");
 header("Access-Control-Allow-Methods: OPTIONS, GET, POST");
 header("Access-Control-Allow-Headers: Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control");
 
+/*there be dragons here*/
+
+/*
+ * Utility function to automatically bind columns from selects in prepared statements to 
+ * an array
+ */
+function bind_result_array($stmt)
+{
+    $meta = $stmt->result_metadata();
+    $result = array();
+    while ($field = $meta->fetch_field())
+    {
+        $result[$field->name] = NULL;
+        $params[] = &$result[$field->name];
+    }
+ 
+    call_user_func_array(array($stmt, 'bind_result'), $params);
+    return $result;
+}
+ 
+/**
+ * Returns a copy of an array of references
+ */
+function getCopy($row)
+{
+    return array_map(create_function('$a', 'return $a;'), $row);
+}
+
+
+
+
+
 // $userID=$_SESSION['user_id'];
 $userID=2;
 if(!is_numeric($userID)){
@@ -18,17 +50,22 @@ if(!is_numeric($userID)){
 $recipeIDList=[];
 $allergyOutput=[];
 
-if (!($stmt = $conn->prepare("SELECT recipe_id, title FROM `user_choices` WHERE `user_id`= ? "))) {
+// if (!($stmt = $conn->prepare("SELECT recipe_id, title FROM `user_choices` WHERE `user_id`= ? "))) {
+//     echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
+// }
+if (!($stmt = $conn->prepare("SELECT 4 AS test, 'hello' AS moo"))) {
     echo "Prepare failed: (" . $conn->errno . ") " . $conn->error;
 }
-if (!$stmt->bind_param("i", $userID)) {
-    echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
-}
+// if (!$stmt->bind_param("i", $userID)) {
+//     echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+// }
 if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
 }
-$allergyResult = $stmt -> get_result();
-while($row = mysqli_fetch_assoc($allergyResult)){
+//$allergyResult = $stmt -> get_result();
+$row = bind_result_array($stmt);
+print_r($row); die('peace!');
+while($row = $stmt->fetch_assoc()){
     $row['title']=addslashes($row['title']);
     $recipeID = $row['recipe_id'];
     if(!is_numeric($recipeID)){
