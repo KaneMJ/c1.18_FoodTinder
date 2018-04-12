@@ -21,9 +21,8 @@ class AllergySelection extends Component {
     formatStorage(){
         for(var i=0; i<registerstorage.allergy.length; i++){
             registerstorage.allergy[i] = registerstorage.allergy[i].toLowerCase();
-        }
-        console.log(registerstorage.allergy);
-    }
+        };
+    };
 
     handleSelected(buttonObject) {
         const { selected } = this.state;
@@ -52,7 +51,7 @@ class AllergySelection extends Component {
     render() {
         const { handleSelected } = this;
         const { selected } = this.state;
-        console.log('Selected', this.state.selected);
+
         return (  
          <div>            
              <LogoHeader back={true} location={'/diet-selection'} />
@@ -70,9 +69,9 @@ class AllergySelection extends Component {
                     <Button title={'Sesame'} selectedCheck={ handleSelected } determineSelected={ selected.includes('Sesame')} />
                     <Button title={'Seafood'} selectedCheck={ handleSelected } determineSelected={ selected.includes('Seafood')} />
                 </div>  
-                <div className="right" style={{marginTop: `4vh`}}><Link to='/register-confirm'>
-                <Next style={'bottom'}/>
-                </Link></div>  
+                <Link className="right" style={{marginTop: `4vh`}} to='/register-confirm'>
+                    <Next style={'bottom'}/>
+                </Link> 
             </div>             
          </div>
         );
