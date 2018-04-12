@@ -19,8 +19,7 @@ class DietSelection extends Component {
         this.handleSelected = this.handleSelected.bind(this);
     };
 
-    handleSelected(buttonObject) {
-        console.log("This is the thing", buttonObject);  
+    handleSelected(buttonObject) { 
         const { selected } = this.state;
 
         if(!selected.includes(buttonObject.props.title)) {
@@ -30,16 +29,6 @@ class DietSelection extends Component {
             });
         }
         registerstorage.diet = buttonObject.props.title.toLowerCase();
-        console.log(registerstorage); 
-        // else {
-        //     debugger;
-        //     //remove the item from the array and replace with new title
-        //     let currentArray = selected;      
-        //     currentArray.splice(0, 1);
-        //     this.setState({
-        //         selected: currentArray
-        //     });
-        // };
     };
 
     render() {
@@ -58,7 +47,7 @@ class DietSelection extends Component {
                         <Button title={'Pescatarian'} descrip={'Fish N\' Greens'} style={'button'} selectedCheck={ handleSelected } determineSelected={ this.state.selected.includes('Pescatarian')} />
                     </div>  
                     <div className="right" style={{marginTop: `3vh`}}>
-                    {(this.state.value) && <Link to='/allergy-selection'><Next /></Link>}
+                    {this.state.value && <Link to='/allergy-selection'><Next /></Link>}
                     </div>     
                 </div>                
             </div>
