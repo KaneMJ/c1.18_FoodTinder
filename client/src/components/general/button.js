@@ -6,8 +6,8 @@ class Button extends Component {
 
         this.state = {
             color: 'grey'
-        }
-    }
+        };
+    };
 
     componentWillReceiveProps(nextProps, prevState) {
         if (nextProps.determineSelected) {
@@ -18,8 +18,8 @@ class Button extends Component {
             this.setState({
                 color: 'gray',
             });
-        }   
-    }
+        };   
+    };
 
     render() {
         return (

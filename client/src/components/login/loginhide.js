@@ -27,8 +27,8 @@ class LoginHide extends Component{
             passwordCharacters: {
                 textDecoration: 'none'
             }
-        }
-    }
+        };
+    };
 
     //use thisprops.history.push to redirect user to the meals page inside then promise
     //use componentdidmount to call axios request to load the correct user meal 
@@ -69,18 +69,20 @@ class LoginHide extends Component{
                 this.setState({
                     emailCheck: noStrike
                 });
-            }
+            };
         });
-    }
-    passwordChange(e){
+    };
+
+    passwordChange(e) {
         this.setState({
             passwordValue: e.target.value
         }, () => {
             this.checkPWLength();
             this.checkPWChars();
         });
-    }
-    checkPWLength(){
+    };
+
+    checkPWLength() {
         if(this.state.passwordValue.length >= 8 && this.state.passwordValue.length <= 32){
             const strikeThrough = {textDecoration: 'line-through'};
             this.setState({
@@ -91,9 +93,10 @@ class LoginHide extends Component{
             this.setState({
                 passwordLength: noStrike
             });
-        }
-    }
-    checkPWChars(){
+        };
+    };
+
+    checkPWChars() {
         const passwordChars = /^[a-z0-9]+$/i;
         if (passwordChars.test(this.state.passwordValue)){
             const strikeThrough = {textDecoration: 'line-through'};
@@ -105,17 +108,19 @@ class LoginHide extends Component{
             this.setState({
                 passwordCharacters: noStrike
             });
-        }
-    }
-    goBack(e){
+        };
+    };
+
+    goBack(e) {
         e.preventDefault();
         if(this.state.emailValue.length === 0 || this.state.passwordValue.length === 0){
             alert('put stuff in the dang fields');
             return;
-        }
+        };
         this.props.returnFX();
-    }
-    fieldFocused(targetField){
+    };
+
+    fieldFocused(targetField) {
         if (targetField === 'email'){
             this.setState({
                 emailFocused: true
@@ -124,9 +129,10 @@ class LoginHide extends Component{
             this.setState({
                 passwordFocused: true
             });
-        }
-    }
-    fieldBlurred(targetField){
+        };
+    };
+
+    fieldBlurred(targetField) {
         if (targetField === 'email'){
             this.setState({
                 emailFocused: false
@@ -135,10 +141,12 @@ class LoginHide extends Component{
             this.setState({
                 passwordFocused: false
             });
-        }
-    }
+        };
+    };
+
     render(){
         const strikeThrough = {textDecoration: 'line-through'} 
+
         return (
             <div>
                 <form onSubmit={this.goBack} className='row'>
@@ -164,11 +172,10 @@ class LoginHide extends Component{
                     </div>
                     <div className='col s2' />
                     <button to='/mymeals' className='btn center-align blue darken-2 waves-effect waves-light' onClick={this.confirmUserInfo.bind(this)}>Login</button>
-                    {/* {this.state.userInfoValue && <Redirect path to="/mymeals"/>} */}
                 </form>
             </div>
         );
-    }
-}
+    };
+};
 
 export default LoginHide;

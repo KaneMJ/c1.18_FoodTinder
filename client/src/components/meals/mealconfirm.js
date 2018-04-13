@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class MealConfirm extends Component{
 
-    render(){
+    render() {
         return (
             <div className='mealConfirmContainer row'>
                 <div className='col s9 confirmTextArea'>
@@ -16,8 +16,8 @@ class MealConfirm extends Component{
                 </div>
                 
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default MealConfirm;

@@ -10,34 +10,33 @@ import mealschosen from '../info_storage/meals-chosen';
 import LogoHeader from '../general/logo-header';
 
 class MealNumber extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
             confirmingMeals: false
-        }
-    }
+        };
+    };
 
-    setNumberOfMeals(num){
+    setNumberOfMeals(num) {
         while (mealschosen.length){
             mealschosen.pop();
-        }
+        };
         for (var i= 0; i< num; i++){
             let randomIndex = Math.floor(Math.random() * mealdb.length);
             mealschosen.push(mealdb[randomIndex]);
             mealdb.splice(randomIndex,1);
-        }
-    }
+        };
+    };
     
-    getRecipes(){
+    getRecipes() {
         console.log('wew');
         this.setState({
             confirmingMeals: true
         });
-    }
+    };
 
     render() {
-
 
         return (
             <div>

@@ -11,7 +11,7 @@ import Footer from '../general/footer';
 import axios from 'axios';
 
 class Meals extends Component{
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -34,8 +34,8 @@ class Meals extends Component{
                 {filter: 'grayscale(0%)'},
                 {filter: 'grayscale(0%)'}
             ]
-        }
-    }
+        };
+    };
 
     componentDidMount() {
         console.log('pulling meals');
@@ -50,17 +50,17 @@ class Meals extends Component{
         }).catch((err) => {
             console.log(err);
         });     
-    }
+    };
 
-    determineMealConfirmation(){
+    determineMealConfirmation() {
         if (!this.props.location.state){
             return false
-        }
+        };
         const {confirmingMeals} = this.props.location.state;
         return confirmingMeals;
-    }
+    };
 
-    mealClicked(number, ingredients, instructions, name, image){
+    mealClicked(number, ingredients, instructions, name, image) {
         console.log(number);
         const newMealInfo = {
             name: name,
@@ -73,13 +73,15 @@ class Meals extends Component{
             mealDetail: newMealInfo,
             showDetails: true
         });
-    }
-    hideDetails(){
+    };
+
+    hideDetails() {
         this.setState({
             showDetails: false
         });
-    }
-    removeMeal(event, index){
+    };
+
+    removeMeal(event, index) {
         event.stopPropagation();
         let {meals} = this.state;
         meals.splice(index, 1);
@@ -87,28 +89,30 @@ class Meals extends Component{
             meals: meals
         })
         this.addSubstituteMeal();
-    }
-    completeMeal(index){
+    };
+
+    completeMeal(index) {
         let compMeals = [...this.state.completeMeals];
         compMeals[index] = {filter: 'grayscale(100%)'};
         this.setState({
             completeMeals: compMeals,
             showDetails: false
         });
-    }
-    addSubstituteMeal(){
+    };
+
+    addSubstituteMeal() {
         let randomIndex = Math.floor(Math.random() * mealdb.length);
         mealschosen.push(mealdb[randomIndex]);
         mealdb.splice(randomIndex, 1);
-    }
-    render(){
+    };
+
+    render() {
 
         const mealMap = this.state.meals.map((meal, index) => {
             return <MealCreator imgSrc={meal.imgSrc} mealName={meal.mealName} key={index} number={index} ingredients={meal.mealIngr} instructions={meal.mealInstr} onclick={this.mealClicked.bind(this)} deleteItem={this.removeMeal.bind(this)} completion={this.state.completeMeals[index]}/>
         });
 
         const {name, image, ingredients, instructions} = this.state.mealDetail;
-
 
         return(
             <div className="mealsContainer">
@@ -118,10 +122,10 @@ class Meals extends Component{
                     {mealMap}
                     {this.state.showDetails && <Details name={name} image={image} ingredients={ingredients} instructions={instructions} hide={this.hideDetails.bind(this)} complete={this.completeMeal.bind(this)} index={this.state.mealDetail.index} />}
                 </main>
-            <Footer currentPage='meals'/>
+            <Footer currentPage='meals' />
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default Meals;

@@ -44,6 +44,7 @@ class AllergySettings extends Component {
     render() {   
         const { handleSelected } = this;
         const { selected } = this.state;
+
         return (  
          <div>            
              <LogoHeader back={true} location={'/diet-settings'}/>
@@ -61,9 +62,9 @@ class AllergySettings extends Component {
                     <Button title={'Sesame'} selectedCheck={ handleSelected } determineSelected={ selected.includes('Sesame')} />
                     <Button title={'Seafood'} selectedCheck={ handleSelected } determineSelected={ selected.includes('Seafood')} />
                 </div>  
-                <div className="right" style={{marginTop: `4vh`}}><Link to='/mymeals'>
-                <Next style={'bottom'}/>
-                </Link></div>  
+                <Link className="right" style={{marginTop: `4vh`}} to='/mymeals'>
+                    <Next style={'bottom'}/>
+                </Link> 
             </div>             
          </div>
         );

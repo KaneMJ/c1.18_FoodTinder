@@ -30,7 +30,7 @@ class RegisterHide extends Component{
             }
         }
     }
-    emailChange(e){
+    emailChange(e) {
         const emailValidification = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         this.setState({
@@ -46,11 +46,12 @@ class RegisterHide extends Component{
                 this.setState({
                     emailCheck: noStrike
                 });
-            }
+            };
         });
         registerstorage.email = e.target.value;
-    }
-    passwordChange(e){
+    };
+
+    passwordChange(e) {
         this.setState({
             passwordValue: e.target.value
         }, () => {
@@ -58,8 +59,9 @@ class RegisterHide extends Component{
             this.checkPWChars();
         });
         registerstorage.password = e.target.value;
-    }
-    checkPWLength(){
+    };
+
+    checkPWLength() {
         if(this.state.passwordValue.length >= 8 && this.state.passwordValue.length <= 32){
             const strikeThrough = {textDecoration: 'line-through'};
             this.setState({
@@ -70,9 +72,10 @@ class RegisterHide extends Component{
             this.setState({
                 passwordLength: noStrike
             });
-        }
-    }
-    checkPWChars(){
+        };
+    };
+
+    checkPWChars() {
         const passwordChars = /^[a-z0-9]+$/i;
         if (passwordChars.test(this.state.passwordValue)){
             const strikeThrough = {textDecoration: 'line-through'};
@@ -84,9 +87,10 @@ class RegisterHide extends Component{
             this.setState({
                 passwordCharacters: noStrike
             });
-        }
-    }
-    confirmChange(e){
+        };
+    };
+
+    confirmChange(e) {
         if (e.target.value === this.state.passwordValue){
             this.setState({
                 confirmValue: e.target.value,
@@ -97,9 +101,10 @@ class RegisterHide extends Component{
                 confirmValue: e.target.value,
                 confirmMatches: {textDecoration: 'none'}
             });
-        }
-    }
-    fieldFocused(targetField){
+        };
+    };
+
+    fieldFocused(targetField) {
         if (targetField === 'email'){
             this.setState({
                 emailFocused: true
@@ -112,9 +117,10 @@ class RegisterHide extends Component{
             this.setState({
                 confirmFocused: true
             });
-        }
-    }
-    fieldBlurred(targetField){
+        };
+    };
+
+    fieldBlurred(targetField) {
         if (targetField === 'email'){
             this.setState({
                 emailFocused: false
@@ -127,8 +133,9 @@ class RegisterHide extends Component{
             this.setState({
                 confirmFocused: false
             });
-        }
-    }
+        };
+    };
+
     render(){
         return (
             <div>
@@ -168,7 +175,7 @@ class RegisterHide extends Component{
                 </form>
             </div>
         );
-    }
-}
+    };
+};
 
 export default RegisterHide;

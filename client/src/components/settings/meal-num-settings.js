@@ -10,18 +10,17 @@ import LogoHeader from '../general/logo-header';
 
 class MealNumberSettings extends Component {
 
-    setNumberOfMeals(num){
-        while (mealschosen.length){
+    setNumberOfMeals(num) {
+        while (mealschosen.length) {
             mealschosen.pop();
-            console.log('Meals chosen: ', mealschosen);
-        }
-        for (var i= 0; i< num; i++){
+        };
+
+        for (var i= 0; i< num; i++) {
             let randomIndex = Math.floor(Math.random() * mealdb.length);
             mealschosen.push(mealdb[randomIndex]);
             mealdb.splice(randomIndex,1);
-            console.log('Meals chosen: ', mealschosen);
-        }
-    }
+        };
+    };
 
     render() {
         return (
@@ -34,10 +33,8 @@ class MealNumberSettings extends Component {
                         <MealNumButton title={'3'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>
                         <MealNumButton title={'5'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
                         <MealNumButton title={'7'} style={'button'} mealnumclick={this.setNumberOfMeals.bind(this)}/>   
-                    </div>  
-                    <div className="right bottom">
-                    <Link to='/mymeals'><Next style={'bottom'} name='Done'/></Link>                  
-                    </div>  
+                    </div>                    
+                    <Link to='/mymeals'className="right bottom"><Next style={'bottom'} name='Done'/></Link>                    
                 </div>                
             </div>
         );

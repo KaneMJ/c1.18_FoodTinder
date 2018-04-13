@@ -15,8 +15,8 @@ class Grocery extends Component{
         return (
             <div className="groceryContainer Oxygen">
             <LogoHeader style={{position: 'fixed'}}/>
-            <main className="mainArea" >
-                <h4 className="head card-panel lobsterFont z-depth-2"> List</h4>
+            <main className="mainArea">
+                <h4 className="head card-panel lobsterFont z-depth-2">List</h4>
                 <div className="list">
                         <div className="item">
                                 <input type='checkbox' className='check filled-in' id='item1' />

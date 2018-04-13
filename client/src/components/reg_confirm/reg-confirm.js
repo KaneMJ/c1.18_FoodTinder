@@ -6,11 +6,12 @@ import {Link} from 'react-router-dom';
 import LogoHeader from '../general/logo-header';
 
 class RegisterConfirm extends Component{
-    constructor(props){
+    constructor(props) {
         super(props);
 
-    }
-    sendAcctToServer(){
+    };
+
+    sendAcctToServer() {
         axios({
             url: 'http://localhost:80/frontend/Ding-FINAL/endpoints/create_user.php',
             method: 'post',
@@ -26,9 +27,9 @@ class RegisterConfirm extends Component{
         }).then((resp)=>{
             console.log('We did it famalam', resp);
         });
-    }
+    };
 
-    render(){
+    render() {
         return (
             <div className='regConfirmContainer container'>
                 <div className='nav-wrapper blue darken-2 z-depth-1'>
@@ -50,8 +51,8 @@ class RegisterConfirm extends Component{
                 <div className='page-footer bottom blue darken-2 z-depth-1 regConfirmFooter'>
                 </div>
             </div>
-        )
-    }
-}
+        );
+    };
+};
 
 export default RegisterConfirm;
