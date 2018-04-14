@@ -1,0 +1,29 @@
+.footer {
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    bottom: 0;
+}
+
+.headerBar {
+    top: 0;
+    z-index: 1; 
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightblue;
+    position: relative;
+}
+
+.headerBar * {
+    font-size: 3rem;
+}

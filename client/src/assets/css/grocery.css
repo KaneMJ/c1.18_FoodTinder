@@ -1,0 +1,30 @@
+.groceryContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.mainArea {
+    position: absolute;
+    top: 10vh;
+    height: 80%;
+    width: 100%;
+    margin: 0;
+    overflow-y: scroll;
+    padding: 0 5%;
+    box-sizing: border-box;
+}
+
+.list {
+    text-align: left;
+}
+
+.item {
+    margin: 5%;
+}
+
+.check, .name {
+    display: inline-block;
+}

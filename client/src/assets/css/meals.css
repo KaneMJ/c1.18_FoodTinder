@@ -1,0 +1,187 @@
+.mealsContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.mealsHeader {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.mealsHeader * {
+    font-size: 2rem;
+}
+
+.mealsMainArea {
+    height: 80%;
+    width: 100%;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+.mealsMainArea > .mealsItem:first-of-type {
+    margin-top: 2px;
+}
+
+.mealsItem, .mealConfirmContainer {
+    height: 20%;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
+}
+
+.mealsImg {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mealsText {
+    font-size: 1.5rem;
+    position: relative;
+    left: 30%;
+    white-space: pre-wrap;
+    width: 70%;
+    text-align: center;
+}
+
+.mealsCancel {
+    color: rgb(187, 3, 3);
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.mealsFooter {
+    position: fixed;
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 -4px 5px 0 rgba(0,0,0,0.14), 0 -1px 10px 0 rgba(0,0,0,0.12), 0 -2px 4px -1px rgba(0,0,0,0.3);
+}
+
+.detailsContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: white;
+    font-family: 'Oxygen', cursive;
+}
+
+.detailsHeader {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    padding-right: 26px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.detailsHeader * {
+    font-size: 2rem;
+}
+
+.detailsTime {
+    margin-bottom: 6%;
+}
+
+.detailsMainArea {
+    height: 80%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 10%;
+    overflow-y: scroll;
+}
+
+.detailsImg {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.detailsIngredientsHead, .detailsInstructionsHead, .detailsNutritionHead {
+    width: 33.3%;
+    font-size: 1.5rem;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid rgb(14, 112, 168);
+    padding: 2% 0;
+}
+
+.detailsSelectedList {
+    background-color: lightblue;
+}
+
+.detailsIngredientsList, .detailsInstructionsList, .detailsNutritionList {
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.detailsInstructionsList, .detailsNutritionList {
+    display: none;
+}
+
+.detailsFooter {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.mealsFooter {
+    bottom: 0;
+}
+
+.mealsMainArea .mealConfirmContainer {
+    margin: 0;
+}
+
+.confirmTextArea {
+    margin-top: 8%;
+}
+
+.confirmHead {
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+.confirmButton {
+    width: 70%;
+    height: 50%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.confirmCheck {
+    margin-top: 12%;
+}

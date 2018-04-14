@@ -7,280 +7,23 @@ body {
     font-size: 0;
 }
 
-.containerThing {
+.mainContentContainer {
     height: 100vh;
     width: 100vw;
     margin: 0;
-}
-
-.loginContainer {
-    height: 100%;
-    width: 100%;
-    background-color: lightblue;
-    margin: 0;
-}
-
-.loginContainer *  {
-    font-size: 1rem;
-}
-
-.loginLogo {
-    text-align: center;
-    padding-top: 30%;
-    margin: 0;
-    font-size: 4rem;
-    font-family: 'Lobster', cursive;
-}
-
-.loginSlogan {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0;
-    padding: 1%;
-    font-family: 'Lobster', cursive;
-}
-
-.loginButtons {
-    margin-top: 40%;
-    text-align: center;
-}
-
-.loginButton, .registerButton {
-    font-size: 2rem;
-    width: 53%;
-    margin: 2%;
-    font-family: 'Oxygen', sans-serif;
-}
-
-.validationText, .checkmark {
-    display: inline-block;
-}
-
-.mealsContainer {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.mealsHeader {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: lightblue;
+    overflow: hidden;
 }
 
 .iconcolor {
     color: rgb(38, 155, 233);
 }
 
-.mealsHeader * {
-    font-size: 2rem;
+.mainContainer {
+    height: 77.5%;
 }
 
-.mealsMainArea {
-    height: 80%;
-    width: 100%;
-    margin: 0;
-    overflow-y: scroll;
-}
-
-.mealsItem {
-    height: 20%;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-    border-bottom: 1px solid grey;
-}
-
-.mealsImg {
-    height: 100%;
-    width: 30%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px black solid;
-}
-
-.mealsText {
-    font-size: 1.5rem;
-    position: relative;
-    left: 30%;
-    white-space: pre-wrap;
-    width: 70%;
-    text-align: center;
-}
-
-.mealsCancel {
-    color: rgb(187, 3, 3);
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    font-weight: bolder;
-    font-size: 1.5rem;
-}
-
-.mealsFooter {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 2rem;
-}
-
-.detailsContainer {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    font-size: 1rem;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background-color: white;
-    font-family: 'Oxygen', cursive;
-}
-
-.detailsHeader {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    padding-right: 26px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: lightblue;
-}
-
-.detailsHeader * {
-    font-size: 2rem;
-}
-
-.detailsTime {
-    margin-bottom: 6%;
-}
-
-.detailsMainArea {
-    height: 80%;
-    width: 100%;
-    margin: 0;
-    overflow-y: scroll;
-}
-
-.detailsImg {
-    width: 100%;
-    border: 1px solid black;
-}
-
-.detailsIngredientsHead, .detailsInstructionsHead, .detailsNutritionHead {
-    width: 33%;
-    font-size: 1.5rem;
-    float: left;
-    box-sizing: border-box;
-    border: 1px solid grey;
-    padding: 2% 0;
-}
-
-.detailsSelectedList {
-    background-color: lightblue;
-}
-
-.detailsIngredientsList, .detailsInstructionsList, .detailsNutritionList {
-    text-align: left;
-    font-size: 1.2rem;
-}
-
-.detailsInstructionsList, .detailsNutritionList {
-    display: none;
-}
-
-.detailsFooter {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 2rem;
-}
-
-.groceryContainer {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    font-size: 1rem;
-}
-
-.groceryHeader {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    padding-right: 26px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: lightblue;
-}
-
-.groceryHeader * {
-    font-size: 2rem;
-}
-
-.groceryMainArea {
-    height: 80%;
-    width: 100%;
-    margin: 0;
-    overflow-y: scroll;
-    padding: 0 5%;
-    box-sizing: border-box;
-}
-
-.groceryList {
-    text-align: left;
-}
-
-.groceryCheck, .groceryName {
-    display: inline-block;
-}
-
-.groceryFooter {
-    height: 10%;
-    width: 100%;
-    margin: 0;
-    background-color: lightblue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 2rem;
-}
-
-.settingsContainer{
-    font-size: 4vmin;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    background-color: lightblue;
-}
-
-.settingsHeader{
-    font-size: 3em;
-    margin: 0;
-    padding: 10% 0;
-}
-
-.settingsButton{
-    margin: 15%;
-    font-size: 2em;
+.collection {
+    overflow: visible;
 }
 
 .lobsterFont {
@@ -296,4 +39,27 @@ body {
     line-height: 26px;
     margin: 4% auto;
     background-color: grey;
+}
+
+.empty {
+    width: 5vw;
+}
+
+.phonePls {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1000000;
+    color: white;
+    background-color: black;
+    font-size: 10vmin;
+}
+
+.phonePls > * {
+    text-align: center;
+    width: 100%;
+}
+
+.completeButton {
+    margin-bottom: 2vh;
 }
